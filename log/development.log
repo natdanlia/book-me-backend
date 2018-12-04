@@ -1,0 +1,497 @@
+Started GET "/posts/new" for 127.0.0.1 at 2018-12-04 08:13:02 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/posts/new"):
+  
+actionpack (5.2.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.1.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-12-04 08:13:07 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/nathandaniel/.rvm/gems/ruby-2.3.3/gems/railties-5.2.1.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/nathandaniel/.rvm/gems/ruby-2.3.3/gems/railties-5.2.1.1/lib/rails/templates/rails/welcome/index.html.erb (3.3ms)
+Completed 200 OK in 10ms (Views: 7.2ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+Migrating to CreateUsers (20181204132711)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "age" integer, "telephone" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181204132711_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181204132711"]]
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+Migrating to CreateRestaurants (20181204133439)
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "restaurants" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "image" varchar, "name" varchar, "cuisine" varchar, "rating" integer, "availability" boolean, "loction" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181204133439_create_restaurants.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181204133439"]]
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+Migrating to RemoveLoctionFromRestaurants (20181204145323)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "arestaurants" ("id" integer NOT NULL PRIMARY KEY, "image" varchar DEFAULT NULL, "name" varchar DEFAULT NULL, "cuisine" varchar DEFAULT NULL, "rating" integer DEFAULT NULL, "availability" boolean DEFAULT NULL, "loction" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181204145323_remove_loction_from_restaurants.rb:3
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "arestaurants" ("id","image","name","cuisine","rating","availability","loction","created_at","updated_at")
+                     SELECT "id","image","name","cuisine","rating","availability","loction","created_at","updated_at" FROM "restaurants"[0m
+  ↳ db/migrate/20181204145323_remove_loction_from_restaurants.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "restaurants"[0m
+  ↳ db/migrate/20181204145323_remove_loction_from_restaurants.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "restaurants" ("id" integer NOT NULL PRIMARY KEY, "image" varchar DEFAULT NULL, "name" varchar DEFAULT NULL, "cuisine" varchar DEFAULT NULL, "rating" integer DEFAULT NULL, "availability" boolean DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181204145323_remove_loction_from_restaurants.rb:3
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "restaurants" ("id","image","name","cuisine","rating","availability","created_at","updated_at")
+                     SELECT "id","image","name","cuisine","rating","availability","created_at","updated_at" FROM "arestaurants"[0m
+  ↳ db/migrate/20181204145323_remove_loction_from_restaurants.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "arestaurants"[0m
+  ↳ db/migrate/20181204145323_remove_loction_from_restaurants.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181204145323"]]
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+Migrating to CreateReservations (20181204145747)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "reservations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "restaurant_id" integer, "time_date" date, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181204145747_create_reservations.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181204145747"]]
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-12-04 14:58:03.726462"], ["updated_at", "2018-12-04 14:58:03.726462"]]
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mReservation Load (0.5ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+Migrating to AddLocationToRestaurants (20181204153029)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (1.6ms)[0m  [1m[35mALTER TABLE "restaurants" ADD "location" varchar[0m
+  ↳ db/migrate/20181204153029_add_location_to_restaurants.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181204153029"]]
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+Migrating to ChangeRatingDataTypeToRestaurants (20181204164124)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20181204164124_change_rating_data_type_to_restaurants.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "arestaurants" ("id" integer NOT NULL PRIMARY KEY, "image" varchar DEFAULT NULL, "name" varchar DEFAULT NULL, "cuisine" varchar DEFAULT NULL, "rating" integer DEFAULT NULL, "availability" boolean DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "location" varchar DEFAULT NULL)[0m
+  ↳ db/migrate/20181204164124_change_rating_data_type_to_restaurants.rb:3
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "arestaurants" ("id","image","name","cuisine","rating","availability","created_at","updated_at","location")
+                     SELECT "id","image","name","cuisine","rating","availability","created_at","updated_at","location" FROM "restaurants"[0m
+  ↳ db/migrate/20181204164124_change_rating_data_type_to_restaurants.rb:3
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE "restaurants"[0m
+  ↳ db/migrate/20181204164124_change_rating_data_type_to_restaurants.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "restaurants" ("id" integer NOT NULL PRIMARY KEY, "image" varchar DEFAULT NULL, "name" varchar DEFAULT NULL, "cuisine" varchar DEFAULT NULL, "rating" varchar DEFAULT NULL, "availability" boolean DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "location" varchar DEFAULT NULL)[0m
+  ↳ db/migrate/20181204164124_change_rating_data_type_to_restaurants.rb:3
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "restaurants" ("id","image","name","cuisine","rating","availability","created_at","updated_at","location")
+                     SELECT "id","image","name","cuisine","rating","availability","created_at","updated_at","location" FROM "arestaurants"[0m
+  ↳ db/migrate/20181204164124_change_rating_data_type_to_restaurants.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "arestaurants"[0m
+  ↳ db/migrate/20181204164124_change_rating_data_type_to_restaurants.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181204164124"]]
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+Migrating to ChangeTimeDateDataTypeToRestaurants (20181204165545)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+Migrating to ChangeTimeDateDataTypeToReservations (20181204165545)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+Migrating to ChangeTimeDateDataTypeToReservations (20181204165545)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20181204165545_change_time_date_data_type_to_reservations.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "areservations" ("id" integer NOT NULL PRIMARY KEY, "user_id" integer DEFAULT NULL, "restaurant_id" integer DEFAULT NULL, "time_date" date DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181204165545_change_time_date_data_type_to_reservations.rb:3
+  [1m[35m (0.4ms)[0m  [1m[32mINSERT INTO "areservations" ("id","user_id","restaurant_id","time_date","created_at","updated_at")
+                     SELECT "id","user_id","restaurant_id","time_date","created_at","updated_at" FROM "reservations"[0m
+  ↳ db/migrate/20181204165545_change_time_date_data_type_to_reservations.rb:3
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE "reservations"[0m
+  ↳ db/migrate/20181204165545_change_time_date_data_type_to_reservations.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "reservations" ("id" integer NOT NULL PRIMARY KEY, "user_id" integer DEFAULT NULL, "restaurant_id" integer DEFAULT NULL, "time_date" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181204165545_change_time_date_data_type_to_reservations.rb:3
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "reservations" ("id","user_id","restaurant_id","time_date","created_at","updated_at")
+                     SELECT "id","user_id","restaurant_id","time_date","created_at","updated_at" FROM "areservations"[0m
+  ↳ db/migrate/20181204165545_change_time_date_data_type_to_reservations.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "areservations"[0m
+  ↳ db/migrate/20181204165545_change_time_date_data_type_to_reservations.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181204165545"]]
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "age", "telephone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Will Smith"], ["age", 50], ["telephone", "202-000-0000"], ["created_at", "2018-12-04 17:08:19.005153"], ["updated_at", "2018-12-04 17:08:19.005153"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[36mRestaurant Create (0.3ms)[0m  [1m[32mINSERT INTO "restaurants" ("image", "name", "cuisine", "rating", "availability", "created_at", "updated_at", "location") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["image", "http://blackfoodie.co/wp-content/uploads/2015/09/IMG_3592.jpg"], ["name", "Enat"], ["cuisine", "Ethiopian"], ["rating", "4.7"], ["availability", 1], ["created_at", "2018-12-04 17:08:19.023213"], ["updated_at", "2018-12-04 17:08:19.023213"], ["location", "4709 N Chambliss St, Alexandria, VA 22312"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mRestaurant Create (0.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("image", "name", "cuisine", "rating", "availability", "created_at", "updated_at", "location") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["image", "https://www.femalefoodie.com/wp-content/uploads/2017/06/IMG_6225-768x1024.jpg"], ["name", "Founding Farmers"], ["cuisine", "American"], ["rating", "4.8"], ["availability", 1], ["created_at", "2018-12-04 17:08:19.025932"], ["updated_at", "2018-12-04 17:08:19.025932"], ["location", "1924 Pennsylvania Ave NW, Washington, DC 20006"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mRestaurant Create (0.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("image", "name", "cuisine", "rating", "availability", "created_at", "updated_at", "location") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["image", "https://i1.wp.com/rnrsushi.com/wp-content/uploads/2018/02/Rock-N-Roll-Sushi-89.jpg?fit=959%2C640&ssl=1"], ["name", "Sushi Rock"], ["cuisine", "Japanese"], ["rating", "4.5"], ["availability", 1], ["created_at", "2018-12-04 17:08:19.028361"], ["updated_at", "2018-12-04 17:08:19.028361"], ["location", "1900 Clarendon Blvd, Arlington, VA 22201"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mRestaurant Create (0.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("image", "name", "cuisine", "rating", "availability", "created_at", "updated_at", "location") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["image", "https://dun6irwnoloqf.cloudfront.net/images/venues/8910/Zaytinya-Wedding-District-of-Columbia-District-of-Columbia-5.1476338949.jpg"], ["name", "Zaytinya"], ["cuisine", "Mediterranean"], ["rating", "4.8"], ["availability", 1], ["created_at", "2018-12-04 17:08:19.030533"], ["updated_at", "2018-12-04 17:08:19.030533"], ["location", "701 9th St NW, Washington, DC 20001"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:22
+  [1m[36mRestaurant Create (0.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("image", "name", "cuisine", "rating", "availability", "created_at", "updated_at", "location") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["image", "http://www.fioladc.com/Fiola/cache/file/A30E3936-E817-40E3-944EBFEA7F740C23.jpg"], ["name", "Fiola"], ["cuisine", "Italian"], ["rating", "4.6"], ["availability", 1], ["created_at", "2018-12-04 17:08:19.032791"], ["updated_at", "2018-12-04 17:08:19.032791"], ["location", "601 Pennsylvania Avenue, NW Washington, DC 20004"]]
+  ↳ db/seeds.rb:22
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "age", "telephone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Will Smith"], ["age", 50], ["telephone", "202-000-0000"], ["created_at", "2018-12-04 17:12:50.223294"], ["updated_at", "2018-12-04 17:12:50.223294"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[36mRestaurant Create (0.4ms)[0m  [1m[32mINSERT INTO "restaurants" ("image", "name", "cuisine", "rating", "availability", "created_at", "updated_at", "location") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["image", "http://blackfoodie.co/wp-content/uploads/2015/09/IMG_3592.jpg"], ["name", "Enat"], ["cuisine", "Ethiopian"], ["rating", "4.7"], ["availability", 1], ["created_at", "2018-12-04 17:12:50.236474"], ["updated_at", "2018-12-04 17:12:50.236474"], ["location", "4709 N Chambliss St, Alexandria, VA 22312"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mRestaurant Create (0.3ms)[0m  [1m[32mINSERT INTO "restaurants" ("image", "name", "cuisine", "rating", "availability", "created_at", "updated_at", "location") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["image", "https://www.femalefoodie.com/wp-content/uploads/2017/06/IMG_6225-768x1024.jpg"], ["name", "Founding Farmers"], ["cuisine", "American"], ["rating", "4.8"], ["availability", 1], ["created_at", "2018-12-04 17:12:50.239262"], ["updated_at", "2018-12-04 17:12:50.239262"], ["location", "1924 Pennsylvania Ave NW, Washington, DC 20006"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mRestaurant Create (0.3ms)[0m  [1m[32mINSERT INTO "restaurants" ("image", "name", "cuisine", "rating", "availability", "created_at", "updated_at", "location") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["image", "https://i1.wp.com/rnrsushi.com/wp-content/uploads/2018/02/Rock-N-Roll-Sushi-89.jpg?fit=959%2C640&ssl=1"], ["name", "Sushi Rock"], ["cuisine", "Japanese"], ["rating", "4.5"], ["availability", 1], ["created_at", "2018-12-04 17:12:50.241828"], ["updated_at", "2018-12-04 17:12:50.241828"], ["location", "1900 Clarendon Blvd, Arlington, VA 22201"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mRestaurant Create (0.3ms)[0m  [1m[32mINSERT INTO "restaurants" ("image", "name", "cuisine", "rating", "availability", "created_at", "updated_at", "location") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["image", "https://dun6irwnoloqf.cloudfront.net/images/venues/8910/Zaytinya-Wedding-District-of-Columbia-District-of-Columbia-5.1476338949.jpg"], ["name", "Zaytinya"], ["cuisine", "Mediterranean"], ["rating", "4.8"], ["availability", 1], ["created_at", "2018-12-04 17:12:50.244321"], ["updated_at", "2018-12-04 17:12:50.244321"], ["location", "701 9th St NW, Washington, DC 20001"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:22
+  [1m[36mRestaurant Create (0.3ms)[0m  [1m[32mINSERT INTO "restaurants" ("image", "name", "cuisine", "rating", "availability", "created_at", "updated_at", "location") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["image", "http://www.fioladc.com/Fiola/cache/file/A30E3936-E817-40E3-944EBFEA7F740C23.jpg"], ["name", "Fiola"], ["cuisine", "Italian"], ["rating", "4.6"], ["availability", 1], ["created_at", "2018-12-04 17:12:50.247256"], ["updated_at", "2018-12-04 17:12:50.247256"], ["location", "601 Pennsylvania Avenue, NW Washington, DC 20004"]]
+  ↳ db/seeds.rb:22
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[36mReservation Create (0.3ms)[0m  [1m[32mINSERT INTO "reservations" ("user_id", "restaurant_id", "time_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 2], ["restaurant_id", 7], ["time_date", "2018-01-01"], ["created_at", "2018-12-04 17:12:50.272671"], ["updated_at", "2018-12-04 17:12:50.272671"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mReservation Create (0.3ms)[0m  [1m[32mINSERT INTO "reservations" ("user_id", "restaurant_id", "time_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 2], ["restaurant_id", 6], ["time_date", "2018-01-19"], ["created_at", "2018-12-04 17:12:50.275237"], ["updated_at", "2018-12-04 17:12:50.275237"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mReservation Create (0.3ms)[0m  [1m[32mINSERT INTO "reservations" ("user_id", "restaurant_id", "time_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 2], ["restaurant_id", 8], ["time_date", "2018-02-12"], ["created_at", "2018-12-04 17:12:50.277951"], ["updated_at", "2018-12-04 17:12:50.277951"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[36mReservation Create (0.3ms)[0m  [1m[32mINSERT INTO "reservations" ("user_id", "restaurant_id", "time_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 2], ["restaurant_id", 9], ["time_date", "2018-02-17"], ["created_at", "2018-12-04 17:12:50.280891"], ["updated_at", "2018-12-04 17:12:50.280891"]]
+  ↳ db/seeds.rb:27
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:28
+  [1m[36mReservation Create (0.3ms)[0m  [1m[32mINSERT INTO "reservations" ("user_id", "restaurant_id", "time_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 2], ["restaurant_id", 10], ["time_date", "2018-03-10"], ["created_at", "2018-12-04 17:12:50.283370"], ["updated_at", "2018-12-04 17:12:50.283370"]]
+  ↳ db/seeds.rb:28
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:28
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+Migrating to CreateUsers (20181204132711)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "age" integer, "telephone" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181204132711_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181204132711"]]
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+Migrating to CreateRestaurants (20181204133439)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "restaurants" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "image" varchar, "name" varchar, "cuisine" varchar, "rating" integer, "availability" boolean, "loction" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181204133439_create_restaurants.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181204133439"]]
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+Migrating to RemoveLoctionFromRestaurants (20181204145323)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "arestaurants" ("id" integer NOT NULL PRIMARY KEY, "image" varchar DEFAULT NULL, "name" varchar DEFAULT NULL, "cuisine" varchar DEFAULT NULL, "rating" integer DEFAULT NULL, "availability" boolean DEFAULT NULL, "loction" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181204145323_remove_loction_from_restaurants.rb:3
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "arestaurants" ("id","image","name","cuisine","rating","availability","loction","created_at","updated_at")
+                     SELECT "id","image","name","cuisine","rating","availability","loction","created_at","updated_at" FROM "restaurants"[0m
+  ↳ db/migrate/20181204145323_remove_loction_from_restaurants.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "restaurants"[0m
+  ↳ db/migrate/20181204145323_remove_loction_from_restaurants.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "restaurants" ("id" integer NOT NULL PRIMARY KEY, "image" varchar DEFAULT NULL, "name" varchar DEFAULT NULL, "cuisine" varchar DEFAULT NULL, "rating" integer DEFAULT NULL, "availability" boolean DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181204145323_remove_loction_from_restaurants.rb:3
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "restaurants" ("id","image","name","cuisine","rating","availability","created_at","updated_at")
+                     SELECT "id","image","name","cuisine","rating","availability","created_at","updated_at" FROM "arestaurants"[0m
+  ↳ db/migrate/20181204145323_remove_loction_from_restaurants.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "arestaurants"[0m
+  ↳ db/migrate/20181204145323_remove_loction_from_restaurants.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181204145323"]]
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+Migrating to CreateReservations (20181204145747)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "reservations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "restaurant_id" integer, "time_date" date, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181204145747_create_reservations.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181204145747"]]
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+Migrating to AddLocationToRestaurants (20181204153029)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "restaurants" ADD "location" varchar[0m
+  ↳ db/migrate/20181204153029_add_location_to_restaurants.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181204153029"]]
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+Migrating to ChangeRatingDataTypeToRestaurants (20181204164124)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "arestaurants" ("id" integer NOT NULL PRIMARY KEY, "image" varchar DEFAULT NULL, "name" varchar DEFAULT NULL, "cuisine" varchar DEFAULT NULL, "rating" integer DEFAULT NULL, "availability" boolean DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "location" varchar DEFAULT NULL)[0m
+  ↳ db/migrate/20181204164124_change_rating_data_type_to_restaurants.rb:3
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "arestaurants" ("id","image","name","cuisine","rating","availability","created_at","updated_at","location")
+                     SELECT "id","image","name","cuisine","rating","availability","created_at","updated_at","location" FROM "restaurants"[0m
+  ↳ db/migrate/20181204164124_change_rating_data_type_to_restaurants.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "restaurants"[0m
+  ↳ db/migrate/20181204164124_change_rating_data_type_to_restaurants.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "restaurants" ("id" integer NOT NULL PRIMARY KEY, "image" varchar DEFAULT NULL, "name" varchar DEFAULT NULL, "cuisine" varchar DEFAULT NULL, "rating" varchar DEFAULT NULL, "availability" boolean DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "location" varchar DEFAULT NULL)[0m
+  ↳ db/migrate/20181204164124_change_rating_data_type_to_restaurants.rb:3
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "restaurants" ("id","image","name","cuisine","rating","availability","created_at","updated_at","location")
+                     SELECT "id","image","name","cuisine","rating","availability","created_at","updated_at","location" FROM "arestaurants"[0m
+  ↳ db/migrate/20181204164124_change_rating_data_type_to_restaurants.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "arestaurants"[0m
+  ↳ db/migrate/20181204164124_change_rating_data_type_to_restaurants.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181204164124"]]
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+Migrating to ChangeTimeDateDataTypeToReservations (20181204165545)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "areservations" ("id" integer NOT NULL PRIMARY KEY, "user_id" integer DEFAULT NULL, "restaurant_id" integer DEFAULT NULL, "time_date" date DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181204165545_change_time_date_data_type_to_reservations.rb:3
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "areservations" ("id","user_id","restaurant_id","time_date","created_at","updated_at")
+                     SELECT "id","user_id","restaurant_id","time_date","created_at","updated_at" FROM "reservations"[0m
+  ↳ db/migrate/20181204165545_change_time_date_data_type_to_reservations.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "reservations"[0m
+  ↳ db/migrate/20181204165545_change_time_date_data_type_to_reservations.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "reservations" ("id" integer NOT NULL PRIMARY KEY, "user_id" integer DEFAULT NULL, "restaurant_id" integer DEFAULT NULL, "time_date" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181204165545_change_time_date_data_type_to_reservations.rb:3
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "reservations" ("id","user_id","restaurant_id","time_date","created_at","updated_at")
+                     SELECT "id","user_id","restaurant_id","time_date","created_at","updated_at" FROM "areservations"[0m
+  ↳ db/migrate/20181204165545_change_time_date_data_type_to_reservations.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "areservations"[0m
+  ↳ db/migrate/20181204165545_change_time_date_data_type_to_reservations.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181204165545"]]
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Create (3.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-12-04 17:14:29.191472"], ["updated_at", "2018-12-04 17:14:29.191472"]]
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nathandaniel/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "age", "telephone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Will Smith"], ["age", 50], ["telephone", "202-000-0000"], ["created_at", "2018-12-04 17:14:35.667948"], ["updated_at", "2018-12-04 17:14:35.667948"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[36mRestaurant Create (0.3ms)[0m  [1m[32mINSERT INTO "restaurants" ("image", "name", "cuisine", "rating", "availability", "created_at", "updated_at", "location") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["image", "http://blackfoodie.co/wp-content/uploads/2015/09/IMG_3592.jpg"], ["name", "Enat"], ["cuisine", "Ethiopian"], ["rating", "4.7"], ["availability", 1], ["created_at", "2018-12-04 17:14:35.680406"], ["updated_at", "2018-12-04 17:14:35.680406"], ["location", "4709 N Chambliss St, Alexandria, VA 22312"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mRestaurant Create (0.3ms)[0m  [1m[32mINSERT INTO "restaurants" ("image", "name", "cuisine", "rating", "availability", "created_at", "updated_at", "location") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["image", "https://www.femalefoodie.com/wp-content/uploads/2017/06/IMG_6225-768x1024.jpg"], ["name", "Founding Farmers"], ["cuisine", "American"], ["rating", "4.8"], ["availability", 1], ["created_at", "2018-12-04 17:14:35.683010"], ["updated_at", "2018-12-04 17:14:35.683010"], ["location", "1924 Pennsylvania Ave NW, Washington, DC 20006"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mRestaurant Create (0.3ms)[0m  [1m[32mINSERT INTO "restaurants" ("image", "name", "cuisine", "rating", "availability", "created_at", "updated_at", "location") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["image", "https://i1.wp.com/rnrsushi.com/wp-content/uploads/2018/02/Rock-N-Roll-Sushi-89.jpg?fit=959%2C640&ssl=1"], ["name", "Sushi Rock"], ["cuisine", "Japanese"], ["rating", "4.5"], ["availability", 1], ["created_at", "2018-12-04 17:14:35.685422"], ["updated_at", "2018-12-04 17:14:35.685422"], ["location", "1900 Clarendon Blvd, Arlington, VA 22201"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mRestaurant Create (0.3ms)[0m  [1m[32mINSERT INTO "restaurants" ("image", "name", "cuisine", "rating", "availability", "created_at", "updated_at", "location") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["image", "https://dun6irwnoloqf.cloudfront.net/images/venues/8910/Zaytinya-Wedding-District-of-Columbia-District-of-Columbia-5.1476338949.jpg"], ["name", "Zaytinya"], ["cuisine", "Mediterranean"], ["rating", "4.8"], ["availability", 1], ["created_at", "2018-12-04 17:14:35.687889"], ["updated_at", "2018-12-04 17:14:35.687889"], ["location", "701 9th St NW, Washington, DC 20001"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:22
+  [1m[36mRestaurant Create (0.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("image", "name", "cuisine", "rating", "availability", "created_at", "updated_at", "location") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["image", "http://www.fioladc.com/Fiola/cache/file/A30E3936-E817-40E3-944EBFEA7F740C23.jpg"], ["name", "Fiola"], ["cuisine", "Italian"], ["rating", "4.6"], ["availability", 1], ["created_at", "2018-12-04 17:14:35.690045"], ["updated_at", "2018-12-04 17:14:35.690045"], ["location", "601 Pennsylvania Avenue, NW Washington, DC 20004"]]
+  ↳ db/seeds.rb:22
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[36mReservation Create (0.3ms)[0m  [1m[32mINSERT INTO "reservations" ("user_id", "restaurant_id", "time_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["restaurant_id", 2], ["time_date", "2018-01-01"], ["created_at", "2018-12-04 17:14:35.704377"], ["updated_at", "2018-12-04 17:14:35.704377"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mReservation Create (0.4ms)[0m  [1m[32mINSERT INTO "reservations" ("user_id", "restaurant_id", "time_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["restaurant_id", 1], ["time_date", "2018-01-19"], ["created_at", "2018-12-04 17:14:35.708090"], ["updated_at", "2018-12-04 17:14:35.708090"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mReservation Create (0.3ms)[0m  [1m[32mINSERT INTO "reservations" ("user_id", "restaurant_id", "time_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["restaurant_id", 3], ["time_date", "2018-02-12"], ["created_at", "2018-12-04 17:14:35.710962"], ["updated_at", "2018-12-04 17:14:35.710962"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[36mReservation Create (0.3ms)[0m  [1m[32mINSERT INTO "reservations" ("user_id", "restaurant_id", "time_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["restaurant_id", 4], ["time_date", "2018-02-17"], ["created_at", "2018-12-04 17:14:35.715422"], ["updated_at", "2018-12-04 17:14:35.715422"]]
+  ↳ db/seeds.rb:27
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:28
+  [1m[36mReservation Create (0.4ms)[0m  [1m[32mINSERT INTO "reservations" ("user_id", "restaurant_id", "time_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["restaurant_id", 5], ["time_date", "2018-03-10"], ["created_at", "2018-12-04 17:14:35.721734"], ["updated_at", "2018-12-04 17:14:35.721734"]]
+  ↳ db/seeds.rb:28
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:28
