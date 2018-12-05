@@ -10,6 +10,12 @@
 
 
 will = User.create(name: "Will Smith", age: 50, telephone: "202-000-0000")
+beyonce = User.create(name: "Beyonce Knowles", age: 37, telephone: "1234")
+ariana = User.create(name: "Ariana Grande", age: 25, telephone: "1234")
+megan = User.create(name: "Megan Fox", age: 31, telephone: "1234")
+scarlett = User.create(name: "Scarlett Johansson", age: 31, telephone: "1234")
+jim = User.create(name: "Jim Carry", age: 56, telephone: "1234")
+denzel = User.create(name: "Denzel Washington", age: 63, telephone: "1234")
 
  enat=Restaurant.create(image: "http://blackfoodie.co/wp-content/uploads/2015/09/IMG_3592.jpg",name: "Enat",cuisine: "Ethiopian",rating: "4.7",availability: true,location: "4709 N Chambliss St, Alexandria, VA 22312")
 
